@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 import { task } from 'ember-concurrency';
 
 export default class WidgetEndpointHealthComponent extends Component {
+    @service intl;
     @service fetch;
 
     @tracked data = null;
@@ -32,7 +33,7 @@ export default class WidgetEndpointHealthComponent extends Component {
             this.data = yield this.fetch.get('metrics/dev/endpoint-health', { period: this.args.period ?? '30d' });
             this.error = null;
         } catch (error) {
-            this.error = error?.message ?? 'Unable to load endpoints';
+            this.error = error?.message ?? this.intl.t('literal.developers.unable-to-load-endpoints');
         }
     }
 

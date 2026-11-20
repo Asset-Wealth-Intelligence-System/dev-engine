@@ -11,14 +11,14 @@ export default class ApplicationController extends Controller {
         return [
             {
                 label: this.intl.t('developers.application.sidebar.items.home'),
-                description: 'Developer dashboard and API health overview.',
+                description: this.intl.t('literal.developers.developer-dashboard-and-api-health-overview'),
                 icon: 'home',
                 route: 'console.developers.home',
                 keywords: ['dashboard', 'overview', 'metrics'],
             },
             {
                 label: this.intl.t('developers.application.sidebar.items.api-keys'),
-                description: 'Create and manage API credentials.',
+                description: this.intl.t('literal.developers.create-and-manage-api-credentials'),
                 icon: 'key',
                 route: 'console.developers.api-keys',
                 permission: 'developers list api-key',
@@ -27,7 +27,7 @@ export default class ApplicationController extends Controller {
             },
             {
                 label: this.intl.t('developers.application.sidebar.items.webhooks'),
-                description: 'Configure webhook endpoints.',
+                description: this.intl.t('literal.developers.configure-webhook-endpoints'),
                 icon: 'globe-asia',
                 route: 'console.developers.webhooks',
                 permission: 'developers list webhook',
@@ -36,7 +36,7 @@ export default class ApplicationController extends Controller {
             },
             {
                 label: this.intl.t('developers.application.sidebar.items.websockets'),
-                description: 'Inspect websocket channels.',
+                description: this.intl.t('literal.developers.inspect-websocket-channels'),
                 icon: 'plug',
                 route: 'console.developers.sockets',
                 permission: 'developers list socket',
@@ -45,7 +45,7 @@ export default class ApplicationController extends Controller {
             },
             {
                 label: this.intl.t('developers.application.sidebar.items.logs'),
-                description: 'Review API request logs.',
+                description: this.intl.t('literal.developers.review-api-request-logs'),
                 icon: 'file-lines',
                 route: 'console.developers.logs',
                 permission: 'developers list log',
@@ -54,7 +54,7 @@ export default class ApplicationController extends Controller {
             },
             {
                 label: this.intl.t('developers.application.sidebar.items.events'),
-                description: 'Browse platform events.',
+                description: this.intl.t('literal.developers.browse-platform-events'),
                 icon: 'calendar-day',
                 route: 'console.developers.events',
                 permission: 'developers list event',

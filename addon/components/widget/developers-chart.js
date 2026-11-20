@@ -12,6 +12,7 @@ const COLORS = [
 ];
 
 export default class WidgetDevelopersChartComponent extends Component {
+    @service intl;
     @service fetch;
 
     @tracked data = null;
@@ -67,7 +68,7 @@ export default class WidgetDevelopersChartComponent extends Component {
             this.data = yield this.fetch.get(`metrics/dev/${this.args.endpoint}`, { period: this.args.period ?? '30d' });
             this.error = null;
         } catch (error) {
-            this.error = error?.message ?? 'Unable to load chart';
+            this.error = error?.message ?? this.intl.t('literal.developers.unable-to-load-chart');
         }
     }
 

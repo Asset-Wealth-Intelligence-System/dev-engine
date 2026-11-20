@@ -50,7 +50,7 @@ export default class WebhookAttemptsComponent extends Component {
             ddButtonText: false,
             ddButtonIcon: 'ellipsis-h',
             ddButtonIconPrefix: 'fas',
-            ddMenuLabel: 'Webhook Log Actions',
+            ddMenuLabel: this.intl.t('literal.developers.webhook-log-actions'),
             cellClassNames: 'overflow-visible',
             wrapperClass: 'flex items-center justify-end mx-2',
             width: '10%',

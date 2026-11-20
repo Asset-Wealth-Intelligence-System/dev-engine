@@ -23,7 +23,7 @@ export default class WebhooksIndexRoute extends Route {
     };
 
     @action loading(transition) {
-        this.loader.showOnInitialTransition(transition, 'section.next-view-section', { loadingMessage: 'Loading webhooks...' });
+        this.loader.showOnInitialTransition(transition, 'section.next-view-section', { loadingMessage: this.intl.t('literal.developers.loading-webhooks') });
     }
 
     beforeModel() {

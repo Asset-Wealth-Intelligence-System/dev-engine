@@ -176,7 +176,7 @@ export default class ApiKeysIndexController extends Controller {
             ddButtonText: false,
             ddButtonIcon: 'ellipsis-h',
             ddButtonIconPrefix: 'fas',
-            ddMenuLabel: 'API Key Actions',
+            ddMenuLabel: this.intl.t('literal.developers.api-key-actions'),
             cellClassNames: 'overflow-visible',
             wrapperClass: 'flex items-center justify-end mx-2',
             align: 'right',
@@ -531,7 +531,7 @@ export default class ApiKeysIndexController extends Controller {
                 onFinish: this.clearDeepLinkedApiKey,
             });
         } catch (_) {
-            this.notifications.warning('Unable to open the selected API key.');
+            this.notifications.warning(this.intl.t('literal.developers.unable-to-open-the-selected-api-key'));
             this.clearDeepLinkedApiKey();
         }
     }

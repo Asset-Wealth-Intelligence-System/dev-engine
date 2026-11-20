@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 import { task } from 'ember-concurrency';
 
 export default class WidgetDevelopersKpiTileComponent extends Component {
+    @service intl;
     @service fetch;
 
     @tracked data = null;
@@ -20,7 +21,7 @@ export default class WidgetDevelopersKpiTileComponent extends Component {
     }
 
     get title() {
-        return this.args.title ?? this.metric.label ?? 'Metric';
+        return this.args.title ?? this.metric.label ?? this.intl.t('literal.developers.metric');
     }
 
     get value() {
@@ -41,7 +42,7 @@ export default class WidgetDevelopersKpiTileComponent extends Component {
         const delta = this.metric.delta_percent;
 
         if (typeof delta !== 'number') {
-            return 'Current';
+            return this.intl.t('literal.developers.current');
         }
 
         return `${delta > 0 ? '+' : ''}${delta}%`;
@@ -69,7 +70,7 @@ export default class WidgetDevelopersKpiTileComponent extends Component {
             this.data = yield this.fetch.get('metrics/dev/kpis', { period: this.args.period ?? '30d' });
             this.error = null;
         } catch (error) {
-            this.error = error?.message ?? 'Unable to load metric';
+            this.error = error?.message ?? this.intl.t('literal.developers.unable-to-load-metric');
         }
     }
 

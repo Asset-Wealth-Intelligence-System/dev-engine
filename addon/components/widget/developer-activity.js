@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 import { task } from 'ember-concurrency';
 
 export default class WidgetDeveloperActivityComponent extends Component {
+    @service intl;
     @service fetch;
 
     @tracked data = null;
@@ -36,7 +37,7 @@ export default class WidgetDeveloperActivityComponent extends Component {
             this.data = yield this.fetch.get('metrics/dev/activity', { limit: 14 });
             this.error = null;
         } catch (error) {
-            this.error = error?.message ?? 'Unable to load activity';
+            this.error = error?.message ?? this.intl.t('literal.developers.unable-to-load-activity');
         }
     }
 

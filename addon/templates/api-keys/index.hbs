@@ -9,7 +9,7 @@
         />
         {{#if this.isTestMode}}
             <span class="mx-2">
-                <select class="form-select form-input-sm" aria-label="Select API Key" {{on "change" this.toggleTestKey}}>
+                <select class="form-select form-input-sm" aria-label={{t "literal.developers.select-api-key"}} {{on "change" this.toggleTestKey}}>
                     <option selected disabled>
                         {{t "developers.api-keys.index.select-key"}}
                     </option>

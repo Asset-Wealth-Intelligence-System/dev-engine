@@ -124,7 +124,7 @@ export default class WebhooksIndexController extends BaseController {
             ddButtonText: false,
             ddButtonIcon: 'ellipsis-h',
             ddButtonIconPrefix: 'fas',
-            ddMenuLabel: 'API Key Actions',
+            ddMenuLabel: this.intl.t('literal.developers.api-key-actions'),
             cellClassNames: 'overflow-visible',
             wrapperClass: 'flex items-center justify-end mx-2',
             width: '10%',

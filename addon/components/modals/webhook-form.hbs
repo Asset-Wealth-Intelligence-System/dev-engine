@@ -9,7 +9,7 @@
             <Input
                 @value={{options.webhook.url}}
                 @type="url"
-                aria-label="Webhook URL"
+                aria-label={{t "literal.developers.webhook-url"}}
                 class="w-full form-input"
                 placeholder={{t "developers.component.modals.webhook-form.endpoint-url-placeholder"}}
             />
@@ -53,7 +53,7 @@
         <div class="input-group">
             <InputLabel @labelText={{t "developers.common.version"}} @helpText={{t "developers.component.modals.webhook-form.version-help-text"}} />
 
-            <select class="w-full form-select" aria-label="API Version" {{on "change" @options.setVersion}}>
+            <select class="w-full form-select" aria-label={{t "literal.developers.api-version"}} {{on "change" @options.setVersion}}>
                 <option selected disabled>
                     {{t "developers.component.modals.webhook-form.version-message"}}
                 </option>
@@ -99,7 +99,7 @@
                                                         {{humanize resourceName}}
                                                     </span>
                                                     <span>
-                                                        {{pluralize events.length "event"}}
+                                                        {{t "literal.developers.event-count" count=events.length}}
                                                     </span>
                                                 </div>
                                                 {{#each events as |event|}}

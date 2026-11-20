@@ -35,10 +35,10 @@
                 </div>
                 <div class="rounded-lg border borer-gray-300 dark:border-gray-700 shadow-sm">
                     <div class="webhook-attempts-date-filter-container">
-                        <div class="date-filter-label">Filter by date:</div>
-                        <DatePicker @value={{this.date}} @onSelect={{this.filterByDate}} placeholder="Filter by date" class="form-input-sm" />
+                        <div class="date-filter-label">{{t "literal.developers.filter-by-date-eab97"}}</div>
+                        <DatePicker @value={{this.date}} @onSelect={{this.filterByDate}} placeholder={{t "literal.developers.filter-by-date"}} class="form-input-sm" />
                         {{#if this.date}}
-                            <Button @type="link" @icon="times" @helpText="Clear date" @onClick={{this.clearDate}} />
+                            <Button @type="link" @icon="times" @helpText={{t "literal.developers.clear-date"}} @onClick={{this.clearDate}} />
                         {{/if}}
                     </div>
                 </div>

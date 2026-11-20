@@ -31,7 +31,7 @@ export default class ApiKeysIndexRoute extends Route {
     };
 
     @action loading(transition) {
-        this.loader.showOnInitialTransition(transition, 'section.next-view-section', { loadingMessage: 'Loading api keys...' });
+        this.loader.showOnInitialTransition(transition, 'section.next-view-section', { loadingMessage: this.intl.t('literal.developers.loading-api-keys') });
     }
 
     beforeModel() {
